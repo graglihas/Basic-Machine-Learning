@@ -1,4 +1,3 @@
-# Basic-Machine-Learning
 ### Basic Machine Learning Codes
 1. Data Pre-Processing
 2. Linear Regression
