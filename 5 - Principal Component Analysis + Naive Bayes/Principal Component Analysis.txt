@@ -1,0 +1,19 @@
+First I imported all the modules and libraries hat will required
+
+Then the dataset Fuel Consumption is loaded
+
+The dependent and independent variables are set
+
+Just for comparison purpose I fitted this data to Linear regression. As you can see without dimension reduction the R-score is 88.93%
+
+Now I will continue with PCA. First I standardize the data using sklear.StandardScalar function. Data scaling is done so that some value are not counted as more important just because of their large values. StandardSclar computes standarsized data using the formula (x-mean)/standard deviation.
+
+The next step is to calculate the covarianve matrix. np.cov function is used to compute the same.X-std is the feature data. rowvar is set to be False to tell the function that columns represent the data and rows are the observations. The default value of rowvar is True which tells that rows are features and columns are observations. So we will have to compute transpose of feature matrix and then pass it. We can observe that coovariance matrix is symmetric in nature.
+
+Next we need to compute Eigen values and Eigen vectors. Eigen vectors of symmetric matrix is orthogonal that is why we get orthogonal features after applying PCA. For caluclating the Eigen values and eigen vectors we use eig function of linear algebra module. This outputs 2 values of eigen values and vectors
+
+Now let us calculate the information percentage in each of the independent variables.Now we can see that majority of the information is coming from the feature associated to first eigen vector that is 88.7% and 7.93% from second eigen vector with a total of 95 plus percent of information. So we drop 5 vectors. We can also see zer percent information in last value this corresponds to first column of original matrix as all have same value so no classification on based of this column
+
+Now I calculated the new feature space by multipying the Eigen vector of first two eigen values as shown in result
+
+By fitting the new feature space with the Y in Linear regression we get a R score of 87.76% which is not much loss of accuracy even after dropping 5 features

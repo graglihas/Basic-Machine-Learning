@@ -1,0 +1,15 @@
+First we have imported all required modules and libraries
+
+Now I have not explicity used it on a dataset. I just used a small data containing 8 data records. This data contains records of eight individuals with which I constructed a classifier that takes in the height, weight, and foot size of an individual and outputs a prediction for their gender.
+
+Now we calculate the priors that is in this case probability of a gender. In this case P_male = 0.625 and p_female = 0.375
+
+Now to calculate the Likelihood using the likelihood function for Gausian Naive Bayes we require means and variances by grouping the data on gender
+
+This is a function to calculate the probability of X given Y using this likelihood function. Now training phase is complete.
+
+Now this is a person for whom we calculate the gender based on other parameters to test this Bayes classifier 
+
+For this we need to calculate  P( a specific gender | this data point person) = p(height|gender)p(weight|gender)p(foot_size|gender)p(gender) for both gender = male and female
+
+Because the value of posterior for female is more than that for male so we classify it as female
